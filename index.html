@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<script type="module" crossorigin src="./assets/main-RkZ46wYw.js"></script>
+<link rel="modulepreload" crossorigin href="./assets/hero-ginkgo-CBsw2eU0.js">
+<link rel="stylesheet" crossorigin href="./assets/main-DZ4dbEk0.css">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#263b42">
+<title>北平的秋</title>
+<link rel="icon" href="data:,">
+<div id="night-backdrop" aria-hidden="true"></div>
+<div id="twilight-backdrop" aria-hidden="true"></div>
+<div id="storm-backdrop" aria-hidden="true"></div>
+<main id="stage" aria-label="北平的秋，北京十一月立体邮票"></main>
+<svg class="dock-icons" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="icon-audio" viewBox="0 0 20 20">
+    <path fill="currentColor" stroke="none" d="M2.8 7.3h3.6l4.1-3.1v11.6l-4.1-3.1H2.8Z"/>
+    <path d="M13 7.2a4 4 0 0 1 0 5.6m2-7.6a6.8 6.8 0 0 1 0 9.6"/>
+  </symbol>
+  <symbol id="icon-muted" viewBox="0 0 20 20">
+    <path fill="currentColor" stroke="none" d="M2.8 7.3h3.6l4.1-3.1v11.6l-4.1-3.1H2.8Z"/>
+    <path d="m13.3 8 4 4m0-4-4 4"/>
+  </symbol>
+  <symbol id="icon-reset" viewBox="0 0 20 20">
+    <path d="M4.3 8.5a6 6 0 1 1 1 5.4M4.2 4.7v4.1h4.1"/>
+  </symbol>
+  <symbol id="icon-chevron" viewBox="0 0 20 20"><path d="m4 12 6-6 6 6"/></symbol>
+  <symbol id="icon-play" viewBox="0 0 20 20"><path fill="currentColor" stroke="none" d="M6.4 3.8 16 10l-9.6 6.2Z"/></symbol>
+  <symbol id="icon-pause" viewBox="0 0 20 20"><path fill="currentColor" stroke="none" d="M5.5 4.4h3v11.2h-3zm6 0h3v11.2h-3z"/></symbol>
+  <symbol id="icon-close" viewBox="0 0 20 20"><path d="m5.2 5.2 9.6 9.6m0-9.6-9.6 9.6"/></symbol>
+</svg>
+<nav class="scene-dock" aria-label="场景操作">
+  <div class="dock-group dock-daylight" role="group" aria-label="时间">
+    <label for="time-of-day">时间</label>
+    <output id="time-display" for="time-of-day" aria-live="off">--:--</output>
+    <div class="dock-time-track">
+      <button id="time-play" type="button" aria-pressed="false" aria-label="播放时间" title="播放时间">
+        <svg class="dock-play" aria-hidden="true"><use href="#icon-play"/></svg><svg class="dock-pause" aria-hidden="true"><use href="#icon-pause"/></svg>
+      </button>
+      <input id="time-of-day" type="range" min="0" max="1439" step="1">
+    </div>
+  </div>
+  <div class="dock-group dock-tools" role="group" aria-label="互动与天气">
+    <div class="dock-menu">
+      <button id="brush-menu" type="button" aria-expanded="false" aria-controls="brush-panel">
+        <span class="dock-tool-label">互动</span><svg class="dock-chevron" aria-hidden="true"><use href="#icon-chevron"/></svg>
+      </button>
+      <div id="brush-panel" class="dock-panel" role="group" aria-label="互动" hidden>
+        <button id="wind" type="button" aria-pressed="false" aria-describedby="wind-hint">画风</button>
+        <button id="fog" type="button" aria-pressed="false" aria-describedby="fog-hint">画雾</button>
+        <button id="cloud" type="button" aria-pressed="false" aria-describedby="cloud-hint">画云</button>
+      </div>
+    </div>
+    <div class="dock-menu">
+      <button id="weather-menu" type="button" aria-expanded="false" aria-controls="weather-panel">
+        <span>天气</span><svg class="dock-chevron" aria-hidden="true"><use href="#icon-chevron"/></svg>
+      </button>
+      <div id="weather-panel" class="dock-panel" role="group" aria-label="天气" hidden>
+        <button id="rain" type="button" aria-pressed="false">下雨</button>
+        <button id="snow" type="button" aria-pressed="false">初雪</button>
+        <button id="thunder" type="button">打雷</button>
+      </div>
+    </div>
+    <div class="dock-hint" hidden>
+      <span id="wind-hint" hidden>在沙盘上拖动画风</span>
+      <span id="fog-hint" hidden>沿地面拖动画雾</span>
+      <span id="cloud-hint" hidden>拖动空白天空画云，拖动已有云移动</span>
+      <button id="cancel-brush" type="button" aria-label="退出互动" title="退出互动"><svg aria-hidden="true"><use href="#icon-close"/></svg></button>
+    </div>
+  </div>
+  <div class="dock-group dock-utilities" role="group" aria-label="场景设置">
+    <button id="orbit" type="button" aria-pressed="false">环绕</button>
+    <button id="audio" type="button" aria-label="声音" title="声音" aria-pressed="true"><svg aria-hidden="true"><use href="#icon-audio"/></svg></button>
+    <button id="reset" type="button" aria-label="复位场景" title="复位"><svg aria-hidden="true"><use href="#icon-reset"/></svg></button>
+  </div>
+</nav>
+<p id="error" role="alert" hidden></p>
+</html>
